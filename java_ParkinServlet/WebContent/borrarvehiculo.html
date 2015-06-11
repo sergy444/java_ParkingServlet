@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BORRAR VEHICULO</title>
+	<style type="text/css">
+			body {
+				text-align: center;
+				font-family: Verdana;
+			}
+	</style>
+
+<script type="text/javascript">
+
+	function carga(){
+		document.getElementById("matricula").focus();
+	}
+	function valideDatos(){
+		
+		var matricula = document.getElementById("matricula");
+
+		if (matricula.value == "" || matricula.value == '' || matricula.value == null){
+			alert ("matricula");
+			return false;
+		}
+	}
+</script>
+	
+
+</head>
+<body>
+<h1>BORRAR VEHICULO</h1>
+<div align="center">
+<form action="borrar-coche.jr" method="POST" onsubmit="return valideDatos();">
+<label>Inserta la matricula:</label><br />
+<input id="matricula" type="text" name="matricula" value="" /><br /><br />
+<button type="submit" name="borrar" value="1">BORRAR</button>
+<input type="button" Value="INICIO" Onclick="window.location.href='http://localhost:8080/JSPparking8.0/'"> 
+</form>
+</div>
+</body>
+</html>

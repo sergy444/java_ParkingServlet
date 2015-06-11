@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AÑADIR VEHICULO</title>
+<script type="text/javascript">
+
+function carga(){
+	document.getElementById("matricula").focus();
+}
+function valideDatos(){
+	
+	var matricula = document.getElementById("matricula");
+	var numRuedas = document.getElementById("numRuedas");
+	var motor = document.getElementById("motor");
+	var marca = document.getElementById("marca");
+	var automatico = document.getElementById("automatico");
+	var consumo100km = document.getElementById("consumo100km");
+	
+	
+	if (matricula.value == "" || matricula.value == '' || matricula.value == null){
+		alert ("matricula");
+		return false;
+	} else if (numRuedas.value == "" || numRuedas.value == '' || numRuedas.value == null){
+		alert ("numruedas");
+		return false;
+		
+	} else if (motor.value == "" || motor.value == '' || motor.value == null){
+		alert ("motor");
+		return false;
+	} else if (marca.value == "" || marca.value == '' || marca.value == null){
+		alert ("marca");
+		return false;
+	} else if (automatico.value == "" || automatico.value == '' || automatico.value == null){
+		alert ("automatico");
+		return false;
+	} else if (consumo100km.value == "" || consumo100km.value == '' || consumo100km.value == null){
+		alert ("consumo100km");
+		return false;	
+		
+	} else if (matricula.value == "" || matricula.value == '' || matricula.value == null) &&
+	(numRuedas.value == "" || numRuedas.value == '' || numRuedas.value == null) &&
+	(motor.value == "" || motor.value == '' || motor.value == null) && 
+	(marca.value == "" || marca.value == '' || marca.value == null) &&
+	(automatico.value.value == "" || automatico.value.value == '' || automatico.value.value == null) && 
+	(consumo100km.value == "" || consumo100km.value == '' || consumo100km.value == null){
+		alert ("inserta los datos");
+		titulo.focus();
+		return false;
+	} else {
+		return true;
+	}
+}
+
+</script>
+
+
+</head>
+<body onload="carga();">
+<h1>INSERTA LOS DATOS DEL COCHE</h1>
+	<form action="insertar-coche.jr" method="POST" onsubmit="return valideDatos();">
+	<label for="matricula">Matricula</label><br />
+		<input type="text" id="matricula" name="matricula" value="" /> <br>
+	<label for="numRuedas">Numero ruedas</label><br />
+		<input type="number" id="numRuedas" name="numRuedas" min="1" max="4"> <br>
+	<label for="Motor">Motor</label><br />
+		<input type="radio" id="motor" name="motor" value="false" checked>NO<br />
+  		<input type="radio" id="motor" name="motor" value="true">SI<br />
+  	<label for="marca">Marca</label><br />
+  		<input type="text" id="marca" name="marca" value=""/> <br>
+  	<label for="consumo100km">Consumo100km</label><br />
+		<input type="number" id="consumo100km" name="consumo100km" min="1" max="1000"> <br>
+	<label for="numRuedas">Automatico</label><br />
+		<input type="radio" id="automatico" name="automatico" value="false" checked>NO<br />
+  		<input type="radio" id="automatico" name="automatico" value="true">SI<br />
+	<button type="submit" name="submit" value="1" >INSERTAR COCHE </button>
+		<input type="button" Value="INICIO" Onclick="window.location.href='http://localhost:8080/JSPparking8.0/'">
+	</form>
+	
+</body>
+</html>
